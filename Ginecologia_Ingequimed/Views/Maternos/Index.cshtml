@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Ginecologia_Ingequimed.Models.Materno>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<center><h1 style="color:#8A0829"><font size="6">Ingresar aquí la Información de tus Familiares</font></h1></center>
+
+<p>
+    <a asp-action="Create"><font style="color:#424949">Agregar</font></a>
+</p>
+<br>
+<table class="table table-bordered">
+    <thead class="table-danger">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre_Pariente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Parentesco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Enfermedad)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Pariente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Parentesco)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Enfermedad)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id"><font style="color:#424949">Editar</font></a> |
+                    <a asp-action="Details" asp-route-id="@item.Id"><font style="color:#424949">Detalles</font></a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id"><font style="color:#424949">Eliminar</font></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<center><a type="button" href="https://localhost:44361/DatoFamiliares" class="btn btn-secondary">Regresar</a></center>

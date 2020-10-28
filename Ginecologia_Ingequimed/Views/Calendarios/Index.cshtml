@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Ginecologia_Ingequimed.Models.Calendario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<center>
+    <h1 style="color:#8A0829"><font size="6">Agrega aquí tus citas</font></h1>
+    <p>
+        <a asp-action="Create"><font style="color:#424949">Agregar</font></a>
+    </p>
+</center>
+<br>
+<br>
+<table class="table table-bordered">
+    <thead class="table-danger">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Día)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Año)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hora)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Día)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Año)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hora)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id"><font style="color:#424949">Editar</font></a> |
+                    <a asp-action="Details" asp-route-id="@item.Id"><font style="color:#424949">Detalles</font></a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id"><font style="color:#424949">Eliminar</font></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<center><a type="button"  href="https://localhost:44361" class="btn btn-secondary">Regresar</a></center>
+

@@ -1,0 +1,26 @@
+﻿@model Ginecologia_Ingequimed.Models.DatoFamiliar
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+    <h1 style="color:#A04000">Eliminar Datos</h1>
+    <hr />
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ImagenProducto)
+        </dt>
+        <dd class="col-sm-10">
+            <img asp-for="ImagenProducto" src="@Url.Action("RenderImage", new { Id = Model.Id})" width="300" height="300" />
+            @Html.DisplayFor(model => model.ImagenProducto)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Regresar</a>
+    </form>
+</div>

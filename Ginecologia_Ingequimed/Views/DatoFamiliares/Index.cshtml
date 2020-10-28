@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Ginecologia_Ingequimed.Models.DatoFamiliar>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+    <center>
+        <h1 style="color:#8A0829"><font size="6">Ingresar tu árbol genealógico aquí</font></h1>
+        <p>
+            <a asp-action="Create"><font style="color:#424949">Agregar</font></a>
+        </p>
+    </center>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a type="button" style="background-color:#AF601A" href="https://localhost:44361/Maternos/Create" class="btn btn"><font style="color:white">Materno</font></a>
+            </th>
+            <th>
+
+            </th>
+            <th>
+                <a type="button" style="background-color:#AF601A" href="https://localhost:44361/Paternos/Create" class="btn btn"><font style="color:white">Paterno</font></a>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.ImagenProducto)*@
+                    <img src="@String.Format("data:image/jpg;base64,{0}", Convert.ToBase64String(item.ImagenProducto))" width="300" height="300" />
+                </td>
+                <td>
+                    <br><br><br><br><br>
+                    <a style="background-color:#F5CBA7" class="btn btn-outline" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a style="background-color:#F5CBA7" class="btn btn-outline" asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                    <a style="background-color:#F5CBA7" class="btn btn-outline" asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<center><a type="button" style="background-color:#F5CBA7" href="https://localhost:44361/Parejas/Create" class="btn btn"><font style="color:black">Siguiente</font></a></center>
+

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Ginecologia_Ingequimed.Models.DatoPersonal>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+    <center><h1 style="color:#8A0829"><font size="6">Datos Personales</font></h1></center>
+<br>
+<p>
+    <a asp-action="Create"><font style="color:#424949">Agregar</font></a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Edad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Habitos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Patalogías)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alergias)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Embarazos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cesárea)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cirugías)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Edad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Habitos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Patalogías)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alergias)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Embarazos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cesárea)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cirugías)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id"><font style="color:#424949">Editar</font></a> |
+                <a asp-action="Details" asp-route-id="@item.Id"><font style="color:#424949">Detalles</font></a> |
+                <a asp-action="Delete" asp-route-id="@item.Id"><font style="color:#424949">Eliminar</font></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<br><br>
+<br><br>
+<br><br>
+<center><a type="button"  href="https://localhost:44361/DatoFamiliares" class="btn btn-secondary">Siguiente</a></center>

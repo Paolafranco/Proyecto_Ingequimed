@@ -1,0 +1,42 @@
+﻿@model Ginecologia_Ingequimed.Models.Calendario
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 style="color:#8A0829"><font size="6">Eliminar cita</font></h1>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Día)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Día)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Mes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Mes)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Año)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Año)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Hora)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Hora)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Regresar</a>
+    </form>
+</div>

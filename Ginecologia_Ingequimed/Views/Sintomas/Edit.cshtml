@@ -1,0 +1,72 @@
+﻿@model Ginecologia_Ingequimed.Models.Sintoma
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+    <center><h1 style="color:#8A0829"><font size="6">Edita tus Datos</font></h1></center>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Fin_del_Periodo" class="control-label"></label>
+                <input asp-for="Fin_del_Periodo" class="form-control" />
+                <span asp-validation-for="Fin_del_Periodo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Días_de_Periodo" class="control-label"></label>
+                <input asp-for="Días_de_Periodo" class="form-control" />
+                <span asp-validation-for="Días_de_Periodo" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Pastillas" /> @Html.DisplayNameFor(model => model.Pastillas)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Inyecciones" /> @Html.DisplayNameFor(model => model.Inyecciones)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Otros_Cuidados" class="control-label"></label>
+                <input asp-for="Otros_Cuidados" class="form-control" />
+                <span asp-validation-for="Otros_Cuidados" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Acto_Sexual" /> @Html.DisplayNameFor(model => model.Acto_Sexual)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sintomas" class="control-label"></label>
+                <input asp-for="Sintomas" class="form-control" />
+                <span asp-validation-for="Sintomas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estado_de_Ánimo" class="control-label"></label>
+                <input asp-for="Estado_de_Ánimo" class="form-control" />
+                <span asp-validation-for="Estado_de_Ánimo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notas" class="control-label"></label>
+                <input asp-for="Notas" class="form-control" />
+                <span asp-validation-for="Notas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input style="background-color:#F5CBA7" type="submit" value="Save" class="btn btn" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index"><font style="color:#424949">Regresar</font></a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
