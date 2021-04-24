@@ -1,0 +1,24 @@
+﻿@model Ginecologia_Ingequimed.Models.DatoFamiliar
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 style="color:#43180E">Detalles Familiares</h1>
+<hr />
+
+<div>
+    <hr />
+    <dl class="row">
+        <dd class="col-auto font-weight-bold">
+            Cargar Imagen
+        </dd>
+        <dt class="col-auto w-50 h-50">
+            <img src="@("/Image/" + Model.ImageName)" asp-append-version="true" class="w-50 h-50" />
+        </dt>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a asp-action="Index">Regresar</a>
+</div>

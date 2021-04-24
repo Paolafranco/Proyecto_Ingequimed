@@ -1,0 +1,46 @@
+﻿@model Ginecologia_Ingequimed.Models.Calendario
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+    <center><h1 style="color:#43180E"><font size="5">Crear cita</font></h1></center>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Día" class="control-label"></label>
+                    <input asp-for="Día" class="form-control" />
+                    <span asp-validation-for="Día" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Mes" class="control-label"></label>
+                    <input asp-for="Mes" class="form-control" />
+                    <span asp-validation-for="Mes" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Año" class="control-label"></label>
+                    <input asp-for="Año" class="form-control" />
+                    <span asp-validation-for="Año" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Hora" class="control-label"></label>
+                    <input asp-for="Hora" class="form-control" />
+                    <span asp-validation-for="Hora" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input style="background-color:#cab4b4" type="submit" value="Create" class="btn btn" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Regresar</a>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

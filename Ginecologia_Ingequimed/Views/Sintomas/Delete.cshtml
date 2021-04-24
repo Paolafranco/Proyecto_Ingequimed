@@ -1,0 +1,73 @@
+﻿@model Ginecologia_Ingequimed.Models.Sintoma
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<h1 style="color:#43180E"><font size="6">Eliminar Datos</font></h1>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Fin_del_Periodo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Fin_del_Periodo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Días_de_Periodo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Días_de_Periodo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pastillas)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pastillas)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Inyecciones)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Inyecciones)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Otros_Cuidados)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Otros_Cuidados)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Acto_Sexual)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Acto_Sexual)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sintomas)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sintomas)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Estado_de_Ánimo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Estado_de_Ánimo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Notas)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Notas)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index"><font style="color:#424949">Regresar</font></a>
+    </form>
+</div>

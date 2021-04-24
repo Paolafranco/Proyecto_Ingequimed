@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Ginecologia_Ingequimed.Models.DatoFamily>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<center>
+    <h1 style="color:#43180E"><font size="6">Ingresar tu árbol genealógico aquí</font></h1>
+    <p>
+        <a asp-action="Create"><font style="color:#43180E">Agregar</font></a>
+    </p>
+</center>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a type="button" style="background-color:#cab4b4" href="https://localhost:44361/Maternos/Create" class="btn btn"><font style="color:white">Materno</font></a>
+            </th>
+            <th>
+
+            </th>
+            <th>
+                <a type="button" style="background-color:#cab4b4" href="https://localhost:44361/Paternos/Create" class="btn btn"><font style="color:white">Paterno</font></a>
+            </th>
+        </tr>
+    </thead>
+</table>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FotografiaPerfil)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido)
+                </td>
+                <td>
+                    <img src="@String.Format("data:image/jpg;base64,{0}", Convert.ToBase64String(item.FotografiaPerfil))" width="300" height="300" />
+                </td>
+                <td>
+                    <br><br><br><br><br>
+                    <a style="background-color:#cab4b4" class="btn btn-outline" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a style="background-color:#cab4b4" class="btn btn-outline" asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                    <a style="background-color:#cab4b4" class="btn btn-outline" asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<center><a style="background-color:#cab4b4" type="button" href="https://localhost:44361/Parejas/Create" class="btn btn"><font style="color:black">Siguiente</font></a></center>

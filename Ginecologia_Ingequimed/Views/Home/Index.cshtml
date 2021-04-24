@@ -1,0 +1,83 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (SignInManager.IsSignedIn(User))
+{
+
+    <div id="contenedor">
+        <div id="menu">
+            <!-- panel-footer -->
+            @*<div class="content" style="text-align:left">
+            <button type="button" value="enviar" class="btn btn-dark">Perfil</button>
+        </div>*@
+            <br><br>
+            <br><br>
+            <br><br>
+            <br><br>
+            <div class="my-custom-scrollbar">
+                <img src="~/img/calendario.png" height="70" width="75">
+                <a type="button"  style="background-color:#cab4b4" href="https://localhost:44361/Calendarios" class="btn btn"><font style="color:black">Citas</font></a>
+                <br><br>
+                <img src="~/img/salud.jpg" height="65" width="77">
+                <a type="button"  style="background-color:#cab4b4" href="https://localhost:44361/Saluds" class="btn btn"><font style="color:black">Salud y Bienestar</font></a>
+                <br><br>
+                <img src="~/img/historial.jpg" height="60" width="75">
+                <a type="button"  style="background-color:#cab4b4" href="https://localhost:44361/DatoPersonales/Create" class="btn btn"><font style="color:black">Historial</font></a>
+                <br><br>
+                <img src="~/img/control.jpg" height="80" width="80">
+                <a type="button"  style="background-color:#cab4b4" href="https://localhost:44361/Sintomas" class="btn btn"><font style="color:black">Control</font></a>
+
+            </div>
+
+        </div>
+        <!-- 1st section -->
+        <section class="row tm-section">
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 p-0">
+                <div class="tm-flex-center p-5 tm-bg-color-primary tm-section-min-h">
+                    <img src="~/img/image-03.jpg" height="250" width="300" />
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <div class="tm-flex-center p-5">
+                    <h1  style="color:#43180E"><font size="5">¿QUE ES LA GINECOLOGÍA?</font></h1>
+                    <q class="tm-quote tm-text-color-gray">Ginecología que significa literalmente ciencia de la mujer y en medicina hace referencia a la especialidad médica y quirúrgica que estudia el sistema reproductor femenino.</q>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2nd section -->
+        <section class="row tm-section tm-col-md-reverse">
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <div class="tm-flex-center p-5">
+                    <div class="tm-md-flex-center">
+                        <h2  style="color:#43180E"><font size="5">LA GINECOLOGÍA Y SUS ENFERMEDADES</font></h2>
+                        <p class="mb-4">
+                            Situaciones que pueden determinar cuándo ir al ginecólogo:<br>
+
+                            Si sufres de fuertes dolores o molestias tras la primera regla, retrasos en la regla, exceso o ausencia de sangrado, etc. Tener molestias en la regla puede ser normal, sin embargo, si los dolores son muy fuertes, es importante consultar al ginecólogo.
+                        </p>
+                        <a href="https://localhost:44361/Enfermedades" style="background-color:#cab4b4" class="btn btn">Saber más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 p-0">
+                <div class="tm-flex-center p-5 tm-bg-color-primary">
+                    <div class="tm-max-w-400 tm-flex-center tm-flex-col">
+                        <img src="~/img/image-04.jpg" height="300" width="300">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+
+    </div>
+}
+else
+{
+    <img src="~/img/Ginecologia.jpg" height="630" width="1100" />
+}

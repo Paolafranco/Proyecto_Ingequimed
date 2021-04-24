@@ -1,0 +1,47 @@
+﻿@model Ginecologia_Ingequimed.Models.DatoFamily
+
+@{
+    ViewData["Title"] = "Create";
+}
+<h1 style="color:#43180E">Ingresa tus Datos Familiares</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apellido" class="control-label"></label>
+                <input asp-for="Apellido" class="form-control" />
+                <span asp-validation-for="Apellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FotografiaPerfil" class="control-label"></label>
+                <label class="custome-file-label" for="custome-file">Escoge una imagen</label>
+                <input asp-for="FotografiaPerfil" type="file" id="customFile" />
+                <span asp-validation-for="FotografiaPerfil" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input style="background-color:#cab4b4" href="https://localhost:44361" type="submit" value="Create" class="btn btn" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script type="text/javascript">
+    $(".custome-file-input").on("change", function () {
+        var fileName = $(this).val().split('\\').pop();
+        $(this).siblings(".custome-file-label").addClass("selected").html(fileName);
+    });
+    </script>
+}

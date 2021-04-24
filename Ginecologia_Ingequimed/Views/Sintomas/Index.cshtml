@@ -1,0 +1,105 @@
+﻿@model IEnumerable<Ginecologia_Ingequimed.Models.Sintoma>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<center> <h1 style="color:#43180E"><font size="6">Selecciona la fecha y hora</font></h1></center>
+<br>
+<center>
+    <form name="formulario" method="post" action="/send.php">
+        <!-- Campo de entrada de fecha -->
+        Selecciona la fecha deseada:
+        <input type="date" name="fecha" min="2020-01-01" max="2021-12-12" />
+        <!-- Campo de entrada de hora -->
+        Selecciona la hora deseada:
+        <input type="time" name="hora" min="07:00" max="21:00" step="3600" />
+    </form>
+</center>
+<br />
+<br />
+<center><h1 style="color:#43180E"><font size="5">Síntomas</font></h1></center>
+<p>
+    <center><a style="color:#43180E" asp-action="Create">Agregar</a></center>
+</p>
+
+<table class="table">
+    <thead style="background-color:#cab4b4">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Fin_del_Periodo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Días_de_Periodo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pastillas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inyecciones)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Otros_Cuidados)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Acto_Sexual)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sintomas)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado_de_Ánimo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notas)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fin_del_Periodo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Días_de_Periodo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pastillas)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Inyecciones)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Otros_Cuidados)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Acto_Sexual)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sintomas)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estado_de_Ánimo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notas)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id"><font style="color:#424949">Editar</font></a>
+                    <a asp-action="Details" asp-route-id="@item.Id"><font style="color:#424949">Detalles</font></a>
+                    <a asp-action="Delete" asp-route-id="@item.Id"><font style="color:#424949">Eliminar</font></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<center><a style="background-color:#cab4b4" type="button" href="https://localhost:44361" class="btn btn">Regresar</a></center>

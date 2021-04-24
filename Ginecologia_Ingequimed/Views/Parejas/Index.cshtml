@@ -1,0 +1,100 @@
+﻿@model IEnumerable<Ginecologia_Ingequimed.Models.Pareja>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<center>
+    <h1 style="color:#43180E"><font size="6">Datos en Pareja</font></h1>
+
+
+    <p>
+        <a asp-action="Create"><font style="color:#43180E">Agregar</font></a>
+    </p>
+</center>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Enfermedades)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Anticonceptivo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Impotencia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ets)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HIV)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hvp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gonorrea)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Otros)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreEnfermedades)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreAnticonceptivo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Enfermedades)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Anticonceptivo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Impotencia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ets)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HIV)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hvp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gonorrea)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Otros)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreEnfermedades)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreAnticonceptivo)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id"><font style="color:#424949">Editar</font></a> 
+                    <a asp-action="Details" asp-route-id="@item.Id"><font style="color:#424949">Detalles</font></a> 
+                    <a asp-action="Delete" asp-route-id="@item.Id"><font style="color:#424949">Eliminar</font></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<center><a style="background-color:#cab4b4" type="button" href="https://localhost:44361" class="btn btn">Regresar</a></center>

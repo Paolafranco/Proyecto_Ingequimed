@@ -1,0 +1,36 @@
+﻿@model Ginecologia_Ingequimed.Models.DatoFamiliar
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+
+
+<h1 style="color:#43180E">Ingresa tus Datos Familiares</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ImageFile" class="control-label"></label>
+                <input asp-for="ImageFile" accept="image/*" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input style="background-color:#cab4b4" href="https://localhost:44361" type="submit" value="Create" class="btn btn" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar</a>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
